@@ -91,40 +91,58 @@ PART 2 SHOPPING CART APP`);
 
 // Directions: Do your work below using the direction in the README.md file.
 
-const userName = prompt("Welcome to the shopping cart! What's your name?");
+// const userName = prompt("Welcome to the shopping cart! What's your name?");
 
-const item1 = prompt("Item 1 name:");
-let item1price = Number(prompt(`${item1} price:`));
+// const item1 = prompt("Item 1 name:");
+// let item1price = Number(prompt(`${item1} price:`));
 
-const item2 = prompt("Item 2 name");
-let item2price = Number(prompt(`${item2} price:`));
+// const item2 = prompt("Item 2 name");
+// let item2price = Number(prompt(`${item2} price:`));
 
-const item3 = prompt("Item 3 name");
-let item3price = Number(prompt(`${item3} price:`));
+// const item3 = prompt("Item 3 name");
+// let item3price = Number(prompt(`${item3} price:`));
 
 // If any of the itemprices is not a number or is 0, ask for the price again.
-if (!item1price || item1price == 0) {
-    item1price = Number(prompt(`${item1} price is not valid, please enter a price`));
-}
-if (!item2price || item2price == 0) {
-    item2price = Number(prompt(`${item2} price is not valid, please enter a price`));
-}
-if (!item3price || item3price == 0) {
-    item3price = Number(prompt(`${item3} price is not valid, please enter a price`));
-}
+// if (!item1price || item1price == 0) {
+//     item1price = Number(prompt(`${item1} price is not valid, please enter a price`));
+// }
+// if (!item2price || item2price == 0) {
+//     item2price = Number(prompt(`${item2} price is not valid, please enter a price`));
+// }
+// if (!item3price || item3price == 0) {
+//     item3price = Number(prompt(`${item3} price is not valid, please enter a price`));
+// }
 
 //Add prices together and multiply by 1.0625 to add tax.
-const total = (item1price + item2price + item3price) * 1.0625;
-document.getElementById('total').innerHTML = `${userName}, your grand total is: $${total}.`
+// const total = (item1price + item2price + item3price) * 1.0625;
+// document.getElementById('total').innerHTML = `${userName}, your grand total is: $${total}.`
 
+    const userName = prompt("Welcome to the shopping cart! What's your name?");
 
+    const item1 = prompt("Item 1 name:");
+    let item1price = Number(prompt(`${item1} price:`));
+    checkPriceNum(item1price);
 
-function itemInput(itemPrice){
-    
+    const item2 = prompt("Item 2 name");
+    let item2price = Number(prompt(`${item2} price:`));
+    checkPriceNum(item2price);
+
+    const item3 = prompt("Item 3 name");
+    let item3price = Number(prompt(`${item3} price:`));
+    checkPriceNum(item3price);
+
+function checkPriceNum(itemPrice){
+    if (!itemPrice || itemPrice == 0) {
+        itemPrice = Number(prompt(`That price is not valid, please enter a price`));
+    }   
 }
-function costOutput(finalPrice){
 
+
+function costOutput(){
+    const total = (item1price + item2price + item3price) * 1.0625;
+    document.getElementById('total').innerHTML = `${userName}, your grand total is: $${total}.`
 }
+costOutput();
 
 
 // // Bonus
